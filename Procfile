@@ -1,0 +1,1 @@
+web: gunicorn bookkeeping_API.wsgi
