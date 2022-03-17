@@ -84,12 +84,57 @@ Carefully use clustered indexes as this helps to retrieve data faster and reduce
 Function keyword:
 Use of Duplicate named parameters:
 In non-restrict mode, traditional functions allow us to use duplicate named parameters. But in strict mode, it is not allowed.
-
+```
 <div>
 <img src="https://res.cloudinary.com/neemathec/image/upload/v1647534616/Screenshot_2022-03-17_at_17.30.10_txo71a.png" width="100%">
 </div>
 
 ```
+Whereas, in arrow functions, parameters with the same name are not allowed whether the strict mode is enabled or not.
+```
+<div>
+<img src="https://res.cloudinary.com/neemathec/image/upload/v1647534634/Screenshot_2022-03-17_at_17.30.30_ly2t58.png" width="100%">
+</div>
+
+```
+Prototype:
+We can get a prototype for a traditional function, but the arrow function does not have a prototype.
+```
+<div>
+<img src="https://res.cloudinary.com/neemathec/image/upload/v1647534645/Screenshot_2022-03-17_at_17.30.41_zujtx9.png" width="100%">
+</div>
+
+```
+this:
+In a traditional function, its internal “this” value is dynamic, it depends on how the function is invoked.
+```
+<div>
+<img src="https://res.cloudinary.com/neemathec/image/upload/v1647535061/Screenshot_2022-03-17_at_17.37.35_vm6zvm.png" width="100%">
+</div>
+
+```
+In the arrow function, there is no “this”, if we access this in the arrow function it will return the “this” of the closest non-arrow parent function.
+```
+<div>
+<img src="https://res.cloudinary.com/neemathec/image/upload/v1647535109/Screenshot_2022-03-17_at_17.38.23_vc0iie.png" width="100%">
+</div>
+
+```
+Use of “new” keyword:
+We can use the “new” keyword on the traditional function to create a new object.
+```
+<div>
+<img src="https://res.cloudinary.com/neemathec/image/upload/v1647535161/Screenshot_2022-03-17_at_17.39.16_wavoja.png" width="100%">
+</div>
+
+```
+But arrow functions cannot be called with “new”.
+```
+<div>
+<img src="https://res.cloudinary.com/neemathec/image/upload/v1647535213/Screenshot_2022-03-17_at_17.40.07_x3cw9f.png" width="100%">
+</div>
+
+
 
 ## Question 
 Assume we have ~100 books and ~25 authors in our database.
@@ -235,3 +280,30 @@ class AuthorBookCountView(generics.CreateAPIView):
 [See codes](https://github.com/NimahCodes/folakemi-umar-submission/blob/main/book/views.py)
 
 
+## Question 5
+React component showing number of clicks on it’s button
+
+## Answer
+```
+Import React from ‘react’
+ 
+function App() {
+const [counter, setCounter] = React.useState(0)
+const btnStyle ={
+   margin: '200px 500px',
+   width: '300px',
+   fontSize: '28px',
+   height: '100px',
+   color: '#FFFFFF',
+   backgroundColor: '#E5E5E5',
+   borderRadius: '5px',
+  }
+return (
+  <div className="App">
+   <button onClick={() => setCounter(counter + 1)} style={btnStyle}>
+     Click count: {counter}
+   </button>
+  </div>
+);
+}
+```
