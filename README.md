@@ -60,8 +60,7 @@ GIL restricts parallel programming and reduces efficiency.
 
 ```
 ## Question 2: 
-
-A decorator that counts how many times the decorated function was called. It prints the number every time the decorated function is executed.
+Write a decorator in python that will count how many times the decorated function was called. It should print the number every time the decorated function is executed. Each function should be counted separately.
 
 ## Answer
 
@@ -71,7 +70,7 @@ A decorator that counts how many times the decorated function was called. It pri
 ```
 
 ## Question 3
-How I would improve a slow SQL SELECT query:
+If you see that a SQL SELECT query is slow - what would you do to improve it?
 
 ## Answer
 ```
@@ -148,8 +147,7 @@ class BookDetailsView(generics.CreateAPIView):
 [See codes](https://github.com/NimahCodes/folakemi-umar-submission/blob/main/book/views.py)
 
 
-## Question 3.2 
-3.2 Write another function that will print the author’s name and all the books he wrote. For all the authors we have in the database. Like this:
+## Write another function that will print the author’s name and all the books he wrote. For all the authors we have in the database. Like this:
 
 Leo Tolstoy: “War and Peace”, “Anna Karenina”, “Resurrection”
 Alexandre Dumas: “The Three Musketeers”, “The Count of Monte Cristo”
@@ -162,13 +160,6 @@ class AuthorBookView(generics.CreateAPIView):
     serializer_class = AuthorBookSerializers
 
     def get(self, request, *args, **kwargs):
-        '''
-        3.2 Write another function that will print the author’s 
-        name and all the books he wrote. For all the authors 
-        we have in the database. Like this:
-        Leo Tolstoy: “War and Peace”, “Anna Karenina”, “Resurrection”
-        Alexandre Dumas: “The Three Musketeers”, “The Count of Monte Cristo”
-        '''
         try:
             result = list(map(
                 lambda d: {Author.objects.get(name=d.get("name")).name:
@@ -321,4 +312,6 @@ return (
   </div>
 );
 }
+
+export default App;
 ```
