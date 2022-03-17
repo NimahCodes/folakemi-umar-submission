@@ -7,12 +7,6 @@ from .serializers import BookSerializers, AuthorBookSerializers
 from itertools import groupby
 
 
-def get_title_and_author(queryset):
-    items = []
-    for item in queryset:
-        items.append(f'"{item.title}" .{item.author.name}')
-
-
 class BookDetailsView(generics.CreateAPIView):
     queryset = Book.objects.all()
     permission_classes = (AllowAny,)
