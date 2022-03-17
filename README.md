@@ -90,8 +90,8 @@ class BookDetailsView(generics.CreateAPIView):
             )
 ```
 
-## Endpoint: https://book-record-api.herokuapp.com/api/v1/book-details/
-
+#### Endpoint: https://book-record-api.herokuapp.com/api/v1/book-details/
+[See codes](https://github.com/NimahCodes/folakemi-umar-submission/blob/main/book/views.py)
 
 
 ## Question 2
@@ -131,8 +131,8 @@ class AuthorBookView(generics.CreateAPIView):
                 dict(message="failed", data=None, error=f'{e}'), status=status.HTTP_400_BAD_REQUEST
             )
 ```
-## Endpoint: https://book-record-api.herokuapp.com/api/v1/author-books/
-
+#### Endpoint: https://book-record-api.herokuapp.com/api/v1/author-books/
+[See codes](https://github.com/NimahCodes/folakemi-umar-submission/blob/main/book/views.py)
 
 
 ## Question 3
@@ -174,6 +174,5 @@ class AuthorBookCountView(generics.CreateAPIView):
 
 ```
 
-## Endpoint: https://book-record-api.herokuapp.com/api/v1/author-books-count/
-
+#### Endpoint: https://book-record-api.herokuapp.com/api/v1/author-books-count/
 [See codes](https://github.com/NimahCodes/folakemi-umar-submission/blob/main/book/views.py)
