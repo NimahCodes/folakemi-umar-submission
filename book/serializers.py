@@ -3,13 +3,23 @@ from .models import Book
 from .models import Author
 
 
-class BookSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Book
-        fields = ["name",]
-
-
 class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Author
-        fields = ["title", "author",]        
+        fields = ('name',)
+
+
+class BookSerializers(serializers.ModelSerializer):
+    author = AuthorSerializer(many=False)
+
+    class Meta:
+        model = Book
+        fields = "__all__"
+
+
+class AuthorBookSerializers(serializers.ModelSerializer):
+    author = serializers.ReadOnlyField(source='author.name')
+
+    class Meta:
+        model = Book
+        fields = ('title', 'author')
