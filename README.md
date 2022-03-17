@@ -76,67 +76,8 @@ Carefully use clustered indexes as this helps to retrieve data faster and reduce
 ```
 
 
+
 ## Question 3
- Differences between “arrow” and “traditional” functions in javascript:
-
-## Answer
-```
-Function keyword:
-Use of Duplicate named parameters:
-In non-restrict mode, traditional functions allow us to use duplicate named parameters. But in strict mode, it is not allowed.
-```
-<div>
-<img src="https://res.cloudinary.com/neemathec/image/upload/v1647534616/Screenshot_2022-03-17_at_17.30.10_txo71a.png" width="100%">
-</div>
-
-```
-Whereas, in arrow functions, parameters with the same name are not allowed whether the strict mode is enabled or not.
-```
-<div>
-<img src="https://res.cloudinary.com/neemathec/image/upload/v1647534634/Screenshot_2022-03-17_at_17.30.30_ly2t58.png" width="100%">
-</div>
-
-```
-Prototype:
-We can get a prototype for a traditional function, but the arrow function does not have a prototype.
-```
-<div>
-<img src="https://res.cloudinary.com/neemathec/image/upload/v1647534645/Screenshot_2022-03-17_at_17.30.41_zujtx9.png" width="100%">
-</div>
-
-```
-this:
-In a traditional function, its internal “this” value is dynamic, it depends on how the function is invoked.
-```
-<div>
-<img src="https://res.cloudinary.com/neemathec/image/upload/v1647535061/Screenshot_2022-03-17_at_17.37.35_vm6zvm.png" width="100%">
-</div>
-
-```
-In the arrow function, there is no “this”, if we access this in the arrow function it will return the “this” of the closest non-arrow parent function.
-```
-<div>
-<img src="https://res.cloudinary.com/neemathec/image/upload/v1647535109/Screenshot_2022-03-17_at_17.38.23_vc0iie.png" width="100%">
-</div>
-
-```
-Use of “new” keyword:
-We can use the “new” keyword on the traditional function to create a new object.
-```
-<div>
-<img src="https://res.cloudinary.com/neemathec/image/upload/v1647535161/Screenshot_2022-03-17_at_17.39.16_wavoja.png" width="100%">
-</div>
-
-```
-But arrow functions cannot be called with “new”.
-```
-<div>
-<img src="https://res.cloudinary.com/neemathec/image/upload/v1647535213/Screenshot_2022-03-17_at_17.40.07_x3cw9f.png" width="100%">
-</div>
-
-
-
-## Question 
 Assume we have ~100 books and ~25 authors in our database.
 Try to write efficient queries, keep in mind how many requests the ORM can make to the database.
 
@@ -196,8 +137,8 @@ class BookDetailsView(generics.CreateAPIView):
 [See codes](https://github.com/NimahCodes/folakemi-umar-submission/blob/main/book/views.py)
 
 
-## Question 2
-4.2 Write another function that will print the author’s name and all the books he wrote. For all the authors we have in the database. Like this:
+## Question 3.2 
+3.2 Write another function that will print the author’s name and all the books he wrote. For all the authors we have in the database. Like this:
 
 Leo Tolstoy: “War and Peace”, “Anna Karenina”, “Resurrection”
 Alexandre Dumas: “The Three Musketeers”, “The Count of Monte Cristo”
@@ -211,7 +152,7 @@ class AuthorBookView(generics.CreateAPIView):
 
     def get(self, request, *args, **kwargs):
         '''
-        4.2 Write another function that will print the author’s 
+        3.2 Write another function that will print the author’s 
         name and all the books he wrote. For all the authors 
         we have in the database. Like this:
         Leo Tolstoy: “War and Peace”, “Anna Karenina”, “Resurrection”
@@ -237,8 +178,8 @@ class AuthorBookView(generics.CreateAPIView):
 [See codes](https://github.com/NimahCodes/folakemi-umar-submission/blob/main/book/views.py)
 
 
-## Question 3
-4.3 Implement the third function, it should print the author’s name and the number of books he wrote. Order by the number of books written, descending. Like this:
+## Question 4
+4 Implement the third function, it should print the author’s name and the number of books he wrote. Order by the number of books written, descending. Like this:
 
 Leo Tolstoy: 3
 Alexandre Dumas: 2
@@ -279,8 +220,71 @@ class AuthorBookCountView(generics.CreateAPIView):
 #### Endpoint: https://book-record-api.herokuapp.com/api/v1/author-books-count/
 [See codes](https://github.com/NimahCodes/folakemi-umar-submission/blob/main/book/views.py)
 
-
 ## Question 5
+ Differences between “arrow” and “traditional” functions in javascript:
+
+## Answer
+```
+Function syntax:
+The traditional javascript function declaration is prefixed by the function  keyword followed by the variable, then parenthesis (with or without argument), before the curly braces, the syntax structure of arrow function is relatively pretty straightforward
+
+
+Use of Duplicate named parameters:
+In non-restrict mode, traditional functions allow us to use duplicate named parameters. But in strict mode, it is not allowed.
+```
+<div>
+<img src="https://res.cloudinary.com/neemathec/image/upload/v1647534616/Screenshot_2022-03-17_at_17.30.10_txo71a.png" width="100%">
+</div>
+
+```
+Whereas, in arrow functions, parameters with the same name are not allowed whether the strict mode is enabled or not.
+```
+<div>
+<img src="https://res.cloudinary.com/neemathec/image/upload/v1647534634/Screenshot_2022-03-17_at_17.30.30_ly2t58.png" width="100%">
+</div>
+
+```
+Prototype:
+We can get a prototype for a traditional function, but the arrow function does not have a prototype.
+```
+<div>
+<img src="https://res.cloudinary.com/neemathec/image/upload/v1647534645/Screenshot_2022-03-17_at_17.30.41_zujtx9.png" width="100%">
+</div>
+
+```
+this:
+In a traditional function, its internal “this” value is dynamic, it depends on how the function is invoked.
+```
+<div>
+<img src="https://res.cloudinary.com/neemathec/image/upload/v1647535061/Screenshot_2022-03-17_at_17.37.35_vm6zvm.png" width="100%">
+</div>
+
+```
+In the arrow function, there is no “this”, if we access this in the arrow function it will return the “this” of the closest non-arrow parent function.
+```
+<div>
+<img src="https://res.cloudinary.com/neemathec/image/upload/v1647535109/Screenshot_2022-03-17_at_17.38.23_vc0iie.png" width="100%">
+</div>
+
+```
+Use of “new” keyword:
+We can use the “new” keyword on the traditional function to create a new object.
+```
+<div>
+<img src="https://res.cloudinary.com/neemathec/image/upload/v1647535161/Screenshot_2022-03-17_at_17.39.16_wavoja.png" width="100%">
+</div>
+
+```
+But arrow functions cannot be called with “new”.
+```
+<div>
+<img src="https://res.cloudinary.com/neemathec/image/upload/v1647535213/Screenshot_2022-03-17_at_17.40.07_x3cw9f.png" width="100%">
+</div>
+
+
+
+
+## Question 6
 React component showing number of clicks on it’s button
 
 ## Answer
