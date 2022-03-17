@@ -57,9 +57,20 @@ Cons:
 
 GIL restricts parallel programming and reduces efficiency.
 
+
+```
+## Question 2: 
+
+A decorator that counts how many times the decorated function was called. It prints the number every time the decorated function is executed.
+
+## Answer
+
+<div>
+<img src="https://res.cloudinary.com/neemathec/image/upload/v1647554051/Screenshot_2022-03-17_at_22.54.02_de4idr.png" width="100%">
+</div>
 ```
 
-## Question 2
+## Question 3
 How I would improve a slow SQL SELECT query:
 
 ## Answer
@@ -77,7 +88,7 @@ Carefully use clustered indexes as this helps to retrieve data faster and reduce
 
 
 
-## Question 3
+## Question 4
 Assume we have ~100 books and ~25 authors in our database.
 Try to write efficient queries, keep in mind how many requests the ORM can make to the database.
 
@@ -178,7 +189,7 @@ class AuthorBookView(generics.CreateAPIView):
 [See codes](https://github.com/NimahCodes/folakemi-umar-submission/blob/main/book/views.py)
 
 
-## Question 4
+## Question 4.2
 4 Implement the third function, it should print the author’s name and the number of books he wrote. Order by the number of books written, descending. Like this:
 
 Leo Tolstoy: 3
