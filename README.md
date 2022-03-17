@@ -32,9 +32,66 @@ Live host
 -  https://book-record-api.herokuapp.com/api/v1/author-books/
 -  https://book-record-api.herokuapp.com/api/v1/author-books-count/
 
-
-
 ## Question 1
+Describe in your own words what is GIL in python, and the pros and cons of it.
+
+## Answer
+```
+GIL in python, the pros and cons of it
+
+GIL is an abbreviation for Global Interpreter Lock. GIL in python is a concept that allows python to run as a single-threaded language. By default, python is a single-threaded as well as a multiple-threaded language. However, the GIL in python helps to ensure that only one thread is executed at any point in time, even in a multi-threaded architecture. This is achieved by locking other interfaces for executing the multiple threads.
+
+Pros:
+
+The concept of GIL makes memory management efficient in python. In Python, every object created has a reference count variable that keeps track of the number of references that point to the object. When the reference count reaches zero, the memory occupied by the object is released.
+
+GIL prevents memory leakage in python as it does not support the execution of multi-threading architecture.
+
+It’s a simple design as only one lock has to be managed
+
+GIL also provides a performance boost to the single-threaded programs
+
+It makes it possible to integrate many C libraries with Python. Which is a main reason why python is  popular.
+ 
+Cons:
+
+GIL restricts parallel programming and reduces efficiency.
+
+```
+
+## Question 2
+How I would improve a slow SQL SELECT query:
+
+## Answer
+```
+Several reasons could be responsible for a slow SQL SELECT query operation. In troubleshooting, I will do the following:
+Explicitly declare the column (or/and) row where necessary, just in case the wildcard (*) was used.
+
+Precisely declare the SELECT ID instead of the SELECT DISTINCT command.
+
+Check to ensure that queries are not being run in a loop or if possible, bulk insert and update data.
+
+Carefully use clustered indexes as this helps to retrieve data faster and reduce runtime.
+
+```
+
+
+## Question 3
+ Differences between “arrow” and “traditional” functions in javascript:
+
+## Answer
+```
+Function keyword:
+Use of Duplicate named parameters:
+In non-restrict mode, traditional functions allow us to use duplicate named parameters. But in strict mode, it is not allowed.
+
+<div>
+<img src="https://res.cloudinary.com/neemathec/image/upload/v1647534616/Screenshot_2022-03-17_at_17.30.10_txo71a.png" width="100%">
+</div>
+
+```
+
+## Question 
 Assume we have ~100 books and ~25 authors in our database.
 Try to write efficient queries, keep in mind how many requests the ORM can make to the database.
 
@@ -176,3 +233,5 @@ class AuthorBookCountView(generics.CreateAPIView):
 
 #### Endpoint: https://book-record-api.herokuapp.com/api/v1/author-books-count/
 [See codes](https://github.com/NimahCodes/folakemi-umar-submission/blob/main/book/views.py)
+
+
