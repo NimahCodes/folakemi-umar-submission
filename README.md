@@ -119,7 +119,7 @@ class BookDetailsView(generics.CreateAPIView):
     def get(self, request, *args, **kwargs):
         try:
             book_author = self.serializer_class(
-                Book.objects.select_related('author').all(),  many=True).data
+                Book.objects.select_related("author").all(),  many=True).data
 
             result = list(map(
                 lambda d: f'“{d.get("title")}“. {d.get("author")}', book_author)
@@ -196,7 +196,7 @@ class AuthorBookCountView(generics.CreateAPIView):
                 lambda d: {Author.objects.get(name=d.get("name")).name:
                            len(Book.objects.filter(
                                author=Author.objects.get(name=d.get("name")))
-                           .values_list('title', flat=True).distinct())
+                           .values_list("title", flat=True).distinct())
                            }, Author.objects.values('name')
             ))
             return Response(
