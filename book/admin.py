@@ -7,7 +7,6 @@ admin.site.register(Author)
 # Book admin interface
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):   
-
     list_display = (
         "title", "author",
     )

@@ -104,11 +104,11 @@ Try to write efficient queries, keep in mind how many requests the ORM can make 
 ```
 - Serializer
 class AuthorBookSerializers(serializers.ModelSerializer):
-    author = serializers.ReadOnlyField(source='author.name')
+    author = serializers.ReadOnlyField(source="author.name")
 
     class Meta:
         model = Book
-        fields = ('title', 'author')
+        fields = ("title", "author")
 
 - View
 class BookDetailsView(generics.CreateAPIView):
@@ -155,8 +155,8 @@ class AuthorBookView(generics.CreateAPIView):
                 lambda d: {Author.objects.get(name=d.get("name")).name:
                            Book.objects.filter(
                                author=Author.objects.get(name=d.get("name")))
-                           .values_list('title', flat=True).distinct()
-                           }, Author.objects.values('name')
+                           .values_list("title", flat=True).distinct()
+                           }, Author.objects.values("name")
             ))
             return Response(
                 dict(message="success", data=result, error=None), status=status.HTTP_200_OK
