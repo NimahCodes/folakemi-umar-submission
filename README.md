@@ -117,16 +117,6 @@ class BookDetailsView(generics.CreateAPIView):
     serializer_class = AuthorBookSerializers
 
     def get(self, request, *args, **kwargs):
-        '''
-        4.1 Using Django ORM, write a function that will
-        print the book title and the author name (who wrote it)
-        for all the books we have in the database. Like this:
-        “War and Peace”. Leo Tolstoy
-        “Anna Karenina”. Leo Tolstoy
-        “Resurrection”. Leo Tolstoy
-        “The Three Musketeers”. Alexandre Dumas
-        “The Count of Monte Cristo”. Alexandre Dumas
-        '''
         try:
             book_author = self.serializer_class(
                 Book.objects.select_related('author').all(),  many=True).data
